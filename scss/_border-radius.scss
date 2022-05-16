@@ -1,0 +1,93 @@
+//  ==========================================================================
+// Borders radius Variables (custom add in the array  $borders-radius => "rounded-x": x , )
+//  ==========================================================================
+
+$borders-radius: (
+  "radius-0" : 0,
+  "radius-2" : 2,
+  "radius"   : 4,
+  "radius-8" : 8,
+  "radius-16": 16,
+);
+
+//  ==========================================================================
+//  Border Radius Stylus
+//  ==========================================================================
+@each $border-name,
+$value in $borders-radius {
+  .#{$border-name} {
+    // border-radius: $value * 1px !important;
+    $border-radius-temp: rem-calc($value);
+    border-radius      : $border-radius-temp !important;
+  }
+}
+
+.rounded-circle,
+.radius-circle {
+  border-radius: 50%!important;
+}
+
+.rounded-pill,
+.radius-pill {
+  border-radius: 50rem !important;
+  &:after {
+    border-radius: 50%!important; // For switches
+  }
+}
+
+
+/* variants radius */
+
+.radius-top {
+  border-bottom-left-radius : 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.radius-right {
+  border-top-left-radius    : 0 !important;
+  border-bottom-left-radius : 0 !important;
+}
+
+.radius-bottom {
+  border-top-right-radius   : 0 !important;
+  border-top-left-radius    : 0 !important;
+}
+
+.radius-left {
+  border-top-right-radius   : 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.radius-top-left {
+  border-bottom-left-radius : 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-top-right-radius   : 0 !important;
+}
+
+.radius-top-right {
+  border-bottom-left-radius : 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-top-left-radius    : 0 !important;
+}
+
+.radius-bottom-left {
+  border-top-right-radius   : 0 !important;
+  border-top-left-radius    : 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.radius-bottom-right {
+  border-top-right-radius   : 0 !important;
+  border-top-left-radius    : 0 !important;
+  border-bottom-left-radius : 0 !important;
+}
+/*
+.radius-diagonal-1 {
+  border-top-right-radius   : 0 !important;
+  border-bottom-left-radius : 0 !important;
+}
+
+.radius-diagonal-2 {
+  border-top-left-radius    : 0 !important;
+  border-bottom-right-radius: 0 !important;
+} */

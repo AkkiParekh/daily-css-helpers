@@ -1,0 +1,167 @@
+// =================================================================================
+// font-sizes varintes
+// =================================================================================
+
+
+// * params full aplica las variantes de :
+// xs(+0.125)
+// sm(+0.25)
+// sm-md(+0.375)
+// md(+0.5)
+// md-lg(+0.625)
+// lg(+0.75)
+// xlg(+0.875)
+// * only on null no crea variantes de la fuente
+
+
+// =================================================================================
+// font-sizes
+// =================================================================================
+$font-sizes: (
+  all: (
+    'fs-x-10'    : ('font-size': 10),
+    'fs-x-11'    : ('font-size': 11),
+    'fs-x-12'    : ('font-size': 12),
+    'fs-x-13'    : ('font-size': 13),
+    'fs-x-14'    : ('font-size': 14),
+    'fs-x-15'    : ('font-size': 15),
+    'fs-x-18'    : ('font-size': 18),
+    'fs-x-22'    : ('font-size': 22),
+    // 1rem
+    'fs-1x'      : ('font-size': 16),
+    'fs-1x-25'   : ('font-size': 20),
+    'fs-1x-50'   : ('font-size': 24),
+    'fs-1x-75'   : ('font-size': 28),
+    // 2rem
+    'fs-2x'      : ('font-size': 32),
+    'fs-2x-25'   : ('font-size': 36),
+    'fs-2x-50'   : ('font-size': 40),
+    'fs-2x-75'   : ('font-size': 44),
+    // 3rem
+    'fs-3x'      : ('font-size': 48),
+    'fs-3x-25'   : ('font-size': 52),
+    'fs-3x-50'   : ('font-size': 56),
+    'fs-3x-75'   : ('font-size': 60),
+    // 4rem
+    'fs-4x'      : ('font-size': 64),
+
+  ),
+  sm: (
+    // 1rem
+    'fs-sm-1x'         : ('font-size': 16),
+    'fs-sm-1x-25'      : ('font-size': 20),
+    'fs-sm-1x-50'      : ('font-size': 24),
+    'fs-sm-1x-75'      : ('font-size': 28),
+    // 2rem
+    'fs-sm-2x'         : ('font-size': 32),
+    'fs-sm-2x-25'      : ('font-size': 36),
+    'fs-sm-2x-50'      : ('font-size': 40),
+    'fs-sm-2x-75'      : ('font-size': 44),
+    // 3rem
+    'fs-sm-3x'         : ('font-size': 48),
+    // 'fs-sm-3x-25'      : ('font-size': 52),
+    // 'fs-sm-3x-50'      : ('font-size': 56),
+    // 'fs-sm-3x-75'      : ('font-size': 60),
+    // 4rem
+    'fs-sm-4x'         : ('font-size': 64),
+  ),
+  md: (
+     // 1rem
+     'fs-md-1x'   : ('font-size': 16),
+     'fs-md-1x-25': ('font-size': 20),
+     'fs-md-1x-50': ('font-size': 24),
+     'fs-md-1x-75': ('font-size': 28),
+     // 2rem
+     'fs-md-2x'   : ('font-size': 32),
+     'fs-md-2x-25': ('font-size': 36),
+     'fs-md-2x-50': ('font-size': 40),
+     'fs-md-2x-75': ('font-size': 44),
+     // 3rem
+     'fs-md-3x'   : ('font-size': 48),
+    //  'fs-md-3x-25': ('font-size': 52),
+    //  'fs-md-3x-50': ('font-size': 56),
+    //  'fs-md-3x-75': ('font-size': 60),
+     // 4rem
+     'fs-md-4x'   : ('font-size': 64),
+  ),
+  lg: (
+    // 1rem
+    'fs-lg-1x'   : ('font-size': 16),
+    'fs-lg-1x-25': ('font-size': 20),
+    'fs-lg-1x-50': ('font-size': 24),
+    'fs-lg-1x-75': ('font-size': 28),
+    // 2rem
+    'fs-lg-2x'   : ('font-size': 32),
+    'fs-lg-2x-25': ('font-size': 36),
+    'fs-lg-2x-50': ('font-size': 40),
+    'fs-lg-2x-75': ('font-size': 44),
+    // 3rem
+    'fs-lg-3x'   : ('font-size': 48),
+    // 'fs-lg-3x-25': ('font-size': 52),
+    // 'fs-lg-3x-50': ('font-size': 56),
+    // 'fs-lg-3x-75': ('font-size': 60),
+    // 4rem
+    'fs-lg-4x'   : ('font-size': 64),
+ ),
+);
+
+
+//  ==========================================================================
+// fonts-size styles CLASS
+//  ==========================================================================
+
+@each $size,
+$fsizes in $font-sizes {
+  @include media-breakpoint-up($size) {
+    @each $fonts,
+    $fonts-defs in $fsizes {
+      .#{$fonts} {
+
+        @if map-has-key($fonts-defs, font-size) {
+          $font-size-temp: rem-calc(map-get($fonts-defs, font-size)) ;
+          font-size: $font-size-temp!important;
+        }
+        @else if map-has-key($fonts-defs, fs) {
+          $font-size-temp: rem-calc(map-get($fonts-defs, font-size)) ;
+          font-size: $font-size-temp!important;
+        }
+      }
+    }
+  }
+}
+
+
+.fs-p-50{
+  font-size:50%
+}
+
+.fs-p-75{
+  font-size:75%
+}
+
+.fs-p-80{
+  font-size:80%
+}
+
+.fs-p-90{
+  font-size:90%
+}
+
+@media( min-width: 768px)
+{
+  .fs-p-md-50{
+    font-size:50%
+  }
+
+  .fs-p-md-75{
+    font-size:75%
+  }
+
+  .fs-p-md-80{
+    font-size:80%
+  }
+
+  .fs-p-md-90{
+    font-size:90%
+  }
+}

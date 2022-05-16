@@ -1,0 +1,68 @@
+.border {
+  border: $border-width solid $border-color !important;
+}
+
+/* Borders sides */
+
+.border-y,
+.border-top {
+  border-top: $border-width solid $border-color !important;
+}
+
+.border-x,
+.border-right {
+  border-right: $border-width solid $border-color !important;
+}
+
+.border-y,
+.border-bottom {
+  border-bottom: $border-width solid $border-color !important;
+}
+
+.border-x,
+.border-left {
+  border-left: $border-width solid $border-color !important;
+}
+
+/* Border 0 */
+
+.border-0 {
+  border: 0 !important;
+}
+
+.border-y-0,
+.border-top-0 {
+  border-top: 0 !important;
+}
+
+.border-x-0,
+.border-right-0 {
+  border-right: 0 !important;
+}
+
+.border-y-0,
+.border-bottom-0 {
+  border-bottom: 0 !important;
+}
+
+.border-x-0,
+.border-left-0 {
+  border-left: 0 !important;
+}
+
+/* Border width */
+.border-1 {
+  border-width: 1px !important
+}
+
+.border-2 {
+  border-width: 2px !important;
+}
+
+.border-3 {
+  border-width: 3px !important;
+}
+
+.border-4 {
+  border-width: 4px !important;
+}

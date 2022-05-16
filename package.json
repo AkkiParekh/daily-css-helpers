@@ -1,0 +1,47 @@
+{
+  "name": "daily-css-helpers",
+  "version": "3.2.1",
+  "description": "css classes of help for fronend",
+  "main": "gulpfile.js",
+  "scripts": {
+    "css-dev": "sass --no-source-map --style=expanded scss/helper-css.scss:css/helper-css.css",
+    "css-prod": "sass --no-source-map --style=compressed scss/helper-css.scss:css/helper-css.min.css",
+    "sass-dev": "sass --update --style=expanded scss/helper-css.scss:css/helper-css.css",
+    "sass-watch": "sass --watch --update --style=expanded scss/helper-css.scss:css/helper-css.css",
+    "css-postcss": "postcss --config build/postcss.config.js --replace \"css/*.css\" \"!css/*.min.css\"",
+    "dev": " npm run sass-dev ",
+    "prod": "npm run css-dev && npm run css-prod && npm run css-postcss "
+  },
+  "postcss": {
+    "parser": "sugarss",
+    "map": false,
+    "plugins": {
+      "autoprefixer": {
+        "cascade": false
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AkkiParekh/daily-css-helpers.git"
+  },
+  "keywords": [
+    "helper css light",
+    "helper css bootstrap4",
+    "utilidades bootstrap4"
+  ],
+  "author": "@AkkiParekh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AkkiParekh/daily-css-helpers/issues"
+  },
+  "homepage": "https://github.com/AkkiParekh/daily-css-helpers#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "clean-css": "^5.2.4",
+    "clean-css-cli": "^5.5.2",
+    "postcss": "^8.4.8",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.49.9"
+  }
+}
